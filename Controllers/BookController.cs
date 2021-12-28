@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using BookManagementApi.Data;
 using BookManagementApi.Model;
@@ -18,7 +19,7 @@ namespace BookManagementApi.Controllers
         }
 
         [HttpGet("GetAllBooks")]
-        public ActionResult GetBooks()
+        public ActionResult<List<BookItems>> GetBooks()
         {
             var items = _context.BookItems.ToList();
             return Ok(items);
